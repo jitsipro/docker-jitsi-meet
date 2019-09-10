@@ -76,6 +76,7 @@ several container images are provided.
 * **jigasi**: [Jigasi], the SIP (audio only) gateway.
 * **etherpad**: [Etherpad], shared document editing addon.
 * **jibri**: [Jibri], the brooadcasting infrastructure.
+* **spot**: [Spot], physical meeting rooms solution.
 
 ### Design considerations
 
@@ -344,6 +345,21 @@ Variable | Description | Example
 
 For setting `GOOGLE_APPLICATION_CREDENTIALS` please read https://cloud.google.com/text-to-speech/docs/quickstart-protocol section "Before you begin" from 1 to 5 paragraph.
 
+### Physical rooms integration with Spot
+
+[Spot] is a solution for physical rooms so they can join online meetings happening in Jitsi Meet.
+In order to enable it, set the config options bellow and run
+Docker Compose with the additional config file `spot.yml`.
+
+Here are the available options:
+
+Variable | Description | Example
+--- | --- | ---
+`SPOT_URL_BASE` | Set Spot URL | http://spot.meet.jitsi:9002
+`SPOT_GOOGLE_CALENDAR_ID` | Client ID for Google Calendar integration (optional) | xxx
+`SPOT_OUTLOOK_CALENDAR_ID` | Client ID for Outlook Calendar integration | xxx
+`SPOT_BG_IMAGE` | Image to be used as the background | https://images.pexels.com/photos/1329510/pexels-photo-1329510.jpeg
+
 ### Advanced configuration
 
 These configuration options are already set and generally don't need to be changed.
@@ -422,3 +438,5 @@ option.
 [jwt.io]: https://jwt.io/#debugger-io
 [Etherpad]: https://github.com/ether/etherpad-lite
 [Jibri]: https://github.com/jitsi/jibri
+[Spot]: https://github.com/jitsi/jitsi-meet-spot
+
