@@ -37,7 +37,7 @@ fi
 
 # copy config files
 if [[ ! -f /config/nginx/nginx.conf ]]; then
-    cp /defaults/nginx.conf /config/nginx/nginx.conf
+    tpl /defaults/nginx.conf > /config/nginx/nginx.conf
 fi
 
 if [[ ! -f /config/nginx/meet.conf ]]; then
